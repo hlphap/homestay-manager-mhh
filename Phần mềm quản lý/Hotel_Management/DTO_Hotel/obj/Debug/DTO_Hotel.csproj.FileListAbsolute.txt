@@ -1,0 +1,10 @@
+C:\Users\Admin\Desktop\SourceTree\Hotel_Management\DTO_Hotel\bin\Debug\DTO_Hotel.dll
+C:\Users\Admin\Desktop\SourceTree\Hotel_Management\DTO_Hotel\bin\Debug\DTO_Hotel.pdb
+C:\Users\Admin\Desktop\SourceTree\Hotel_Management\DTO_Hotel\obj\Debug\DTO_Hotel.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\SourceTree\Hotel_Management\DTO_Hotel\obj\Debug\DTO_Hotel.dll
+C:\Users\Admin\Desktop\SourceTree\Hotel_Management\DTO_Hotel\obj\Debug\DTO_Hotel.pdb
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DTO_Hotel\bin\Debug\DTO_Hotel.dll
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DTO_Hotel\bin\Debug\DTO_Hotel.pdb
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DTO_Hotel\obj\Debug\DTO_Hotel.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DTO_Hotel\obj\Debug\DTO_Hotel.dll
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DTO_Hotel\obj\Debug\DTO_Hotel.pdb

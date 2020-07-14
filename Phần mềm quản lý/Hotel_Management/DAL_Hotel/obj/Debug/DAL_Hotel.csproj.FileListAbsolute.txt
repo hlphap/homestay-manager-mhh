@@ -1,0 +1,8 @@
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DAL_Hotel\bin\Debug\DAL_Hotel.dll
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DAL_Hotel\bin\Debug\DAL_Hotel.pdb
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DAL_Hotel\bin\Debug\DTO_Hotel.dll
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DAL_Hotel\bin\Debug\DTO_Hotel.pdb
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DAL_Hotel\obj\Debug\DAL_Hotel.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DAL_Hotel\obj\Debug\DAL_Hotel.csproj.CopyComplete
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DAL_Hotel\obj\Debug\DAL_Hotel.dll
+C:\Users\Admin\Desktop\DOAN_MOHINHHOA\Hotel_Management\DAL_Hotel\obj\Debug\DAL_Hotel.pdb
