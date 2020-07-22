@@ -20,20 +20,45 @@ namespace Hotel_Management.GUI_CaiDat
             ShowPanel();
         }
         BUS_Phong busp = new BUS_Phong();
+        BUS_LoaiPhong bus_lp = new BUS_LoaiPhong();
         private int kt = 0;
+
+
+        private void GUI_ListPhong_Load(object sender, EventArgs e)
+        {
+            LoadLoaiPhong();
+        }
+
+        private void LoadLoaiPhong()
+        {
+            List<DTO_LoaiPhong> lsobj_lp = new List<DTO_LoaiPhong>();
+            string result = this.bus_lp.SelectAll(lsobj_lp);
+            if (result != "0")
+            {
+                MessageBox.Show("Load list have been fail. \n" + result);
+                return;
+            }
+
+            foreach (DTO_LoaiPhong item in lsobj_lp)
+            {
+                combobox_lp.Items.Add(item.Tenlp);
+            }
+           
+          
+        }
         public void ReadOnlyTb()
         {
-            if (txb_giaphong.ReadOnly == true)
+            if (txb_sophong.ReadOnly == true)
             {
-                txb_giaphong.ReadOnly = false;
-                txb_loaiphong.ReadOnly = false;
-                txb_sophong.ReadOnly = true;
+                txb_giaphong.ReadOnly = true;
+                combobox_lp.Enabled = true;
+                txb_sophong.ReadOnly = false ;
                 txb_tinhtrang.ReadOnly = false;
             }
             else
             {
                 txb_giaphong.ReadOnly = true;
-                txb_loaiphong.ReadOnly = true;
+                combobox_lp.Enabled = false;
                 txb_sophong.ReadOnly = true;
                 txb_tinhtrang.ReadOnly = true;
             }
@@ -72,11 +97,22 @@ namespace Hotel_Management.GUI_CaiDat
         {
      
             DTO_Phong objp = new DTO_Phong();
+            List<DTO_LoaiPhong> lsobj_lp = new List<DTO_LoaiPhong>();
+            string result = bus_lp.SelectAll(lsobj_lp);
+
+
+            var Malp = from x in lsobj_lp
+                       where (x.Tenlp == combobox_lp.Text)
+                       select new
+                       {
+                           malp = x.Malp
+                       };
             objp.Sophong = this.txb_sophong.Text;
-            objp.Gia = this.txb_giaphong.Text;
             objp.Status = this.txb_tinhtrang.Text;
-            objp.Malp = this.txb_loaiphong.Text;
-           
+            foreach (var item in Malp)
+            {
+                objp.Malp = item.malp;
+            }           
             lb_ten.Text = txb_sophong.Text;
             lb_status.Text = txb_tinhtrang.Text;
             if (kt == 0)
@@ -86,9 +122,9 @@ namespace Hotel_Management.GUI_CaiDat
                     MessageBox.Show("Chưa nhập số phòng", "Erro");
                     return;
                 }
-                if (txb_loaiphong.Text == "")
+                if (combobox_lp.Text == "")
                 {
-                    MessageBox.Show("Chưa nhập mã loại phòng", "Erro");
+                    MessageBox.Show("Chưa chọn loại phòng", "Erro");
                     return;
                 }
 
@@ -125,5 +161,7 @@ namespace Hotel_Management.GUI_CaiDat
             }
             this.Hide();
         }
+
+     
     }
 }

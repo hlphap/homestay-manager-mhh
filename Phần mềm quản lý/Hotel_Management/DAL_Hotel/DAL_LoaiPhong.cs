@@ -48,7 +48,6 @@ namespace DAL_Hotel
                                 obj.Tenlp = reader["TENLP"].ToString();
                                 obj.Trangthietbi = reader["TRANGTHIETBI"].ToString();
                                 obj.Gia = reader["GIA"].ToString();
-                                obj.Donvi = reader["DONVI"].ToString();
                                 lsObj.Add(obj);
                             }
                         }
@@ -66,8 +65,8 @@ namespace DAL_Hotel
         public string Insert(DTO_LoaiPhong obj)
         {
             string query = string.Empty;
-            query += "INSERT INTO [TBL_LOAIPHONG] ( [MALP], [TENLP], [TRANGTHIETBI], [GIA], [DONVI] )";
-            query += "VALUES (@MALP, @TENLP, @TRANGTHIETBI, @GIA, @DONVI)";
+            query += "INSERT INTO [TBL_LOAIPHONG] ( [MALP], [TENLP], [TRANGTHIETBI], [GIA] )";
+            query += "VALUES (@MALP, @TENLP, @TRANGTHIETBI, @GIA)";
             using (SqlConnection conn = new SqlConnection(connectionSTR))
             {
                 using (SqlCommand comm = new SqlCommand())
@@ -80,7 +79,6 @@ namespace DAL_Hotel
                     comm.Parameters.AddWithValue("@TENLP", obj.Tenlp);
                     comm.Parameters.AddWithValue("@TRANGTHIETBI", obj.Trangthietbi);
                     comm.Parameters.AddWithValue("@GIA", obj.Gia);
-                    comm.Parameters.AddWithValue("@DONVI", obj.Donvi);
 
                     try
                     {
@@ -133,8 +131,7 @@ namespace DAL_Hotel
             query += " UPDATE [TBL_LOAIPHONG] SET";
             query += " [TENLP] = @TENLP ,";
             query += " [TRANGTHIETBI] = @TRANGTHIETBI ,";
-            query += " [GIA] = @GIA ,";
-            query += " [DONVI] = @DONVI";
+            query += " [GIA] = @GIA";
             query += " WHERE ";
             query += " [MALP] = @MALP ";
 
@@ -149,7 +146,6 @@ namespace DAL_Hotel
                     comm.Parameters.AddWithValue("@TENLP", obj.Tenlp);
                     comm.Parameters.AddWithValue("@TRANGTHIETBI", obj.Trangthietbi);
                     comm.Parameters.AddWithValue("@GIA", obj.Gia);
-                    comm.Parameters.AddWithValue("@DONVI", obj.Donvi);
 
                     try
                     {
@@ -170,7 +166,7 @@ namespace DAL_Hotel
         {
 
             string query = string.Empty;
-            query += " SELECT [MALP], [TENLP], [TRANGTHIETBI], [GIA], [DONVI]";
+            query += " SELECT [MALP], [TENLP], [TRANGTHIETBI], [GIA]";
             query += " FROM [TBL_LOAIPHONG]";
             query += " WHERE";
             query += " [MALP] = @MALP ";
@@ -200,7 +196,6 @@ namespace DAL_Hotel
                                 obj.Tenlp = reader["TENLP"].ToString();
                                 obj.Trangthietbi = reader["TRANGTHIETBI"].ToString();
                                 obj.Gia = reader["GIA"].ToString();
-                                obj.Donvi = reader["DONVI"].ToString();
 
                                 lsObj.Add(obj);
                             }
@@ -214,6 +209,49 @@ namespace DAL_Hotel
                 }
             }
             return "0";
+        }
+
+        public string TaoMa()
+        {
+            string MaLP = null;
+            string query = string.Empty;
+            query += "AUTO_IDLP";
+            using (SqlConnection conn = new SqlConnection(connectionSTR))
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandType = CommandType.StoredProcedure;
+                    comm.CommandText = query;
+                    SqlParameter resultParam = new SqlParameter("@Result", SqlDbType.VarChar);
+
+                    //  
+                    resultParam.Direction = ParameterDirection.ReturnValue;
+
+                    comm.Parameters.Add(resultParam);
+
+
+
+                    try
+                    {
+                        conn.Open();
+                        comm.ExecuteNonQuery();
+
+                        if (resultParam.Value != DBNull.Value)
+                        {
+                            MaLP = (string)resultParam.Value;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        //' Cập nhật that bai!!!
+                        return "Tạo mã thất bại" + ex.Message + "\n" + ex.StackTrace;
+                    }
+                }
+                return MaLP;
+            }
         }
     }
 }

@@ -137,6 +137,7 @@
             this.btnDangKy.DisabledBorderColor = System.Drawing.Color.Empty;
             this.btnDangKy.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnDangKy.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnDangKy.Enabled = false;
             this.btnDangKy.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
             this.btnDangKy.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btnDangKy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
@@ -288,10 +289,10 @@
             this.PageSignIn.Location = new System.Drawing.Point(343, 31);
             this.PageSignIn.Multiline = true;
             this.PageSignIn.Name = "PageSignIn";
-            this.PageSignIn.Page = this.DangKy;
-            this.PageSignIn.PageIndex = 1;
-            this.PageSignIn.PageName = "DangKy";
-            this.PageSignIn.PageTitle = "tabPage4";
+            this.PageSignIn.Page = this.DangNhap;
+            this.PageSignIn.PageIndex = 0;
+            this.PageSignIn.PageName = "DangNhap";
+            this.PageSignIn.PageTitle = "tabPage3";
             this.PageSignIn.SelectedIndex = 0;
             this.PageSignIn.Size = new System.Drawing.Size(499, 419);
             this.PageSignIn.TabIndex = 2;
@@ -410,7 +411,7 @@
             this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPassword.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.txtPassword.DefaultText = "admin";
+            this.txtPassword.DefaultText = "";
             this.txtPassword.FillColor = System.Drawing.Color.White;
             this.txtPassword.HideSelection = true;
             this.txtPassword.IconLeft = ((System.Drawing.Image)(resources.GetObject("txtPassword.IconLeft")));
@@ -418,8 +419,7 @@
             this.txtPassword.IconPadding = 10;
             this.txtPassword.IconRight = null;
             this.txtPassword.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPassword.Lines = new string[] {
-        "admin"};
+            this.txtPassword.Lines = new string[0];
             this.txtPassword.Location = new System.Drawing.Point(57, 199);
             this.txtPassword.MaxLength = 32767;
             this.txtPassword.MinimumSize = new System.Drawing.Size(100, 35);
@@ -453,7 +453,7 @@
             this.txtPassword.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
-            this.txtPassword.SelectionStart = 5;
+            this.txtPassword.SelectionStart = 0;
             this.txtPassword.ShortcutsEnabled = true;
             this.txtPassword.Size = new System.Drawing.Size(386, 39);
             this.txtPassword.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
@@ -502,13 +502,13 @@
             this.txtUsername.BorderColorActive = System.Drawing.Color.DodgerBlue;
             this.txtUsername.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(161)))), ((int)(((byte)(161)))));
             this.txtUsername.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.txtUsername.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
+            this.txtUsername.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(168)))), ((int)(((byte)(147)))));
             this.txtUsername.BorderRadius = 1;
             this.txtUsername.BorderThickness = 1;
             this.txtUsername.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.txtUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUsername.DefaultFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F);
-            this.txtUsername.DefaultText = "admin";
+            this.txtUsername.DefaultText = "";
             this.txtUsername.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.txtUsername.HideSelection = true;
@@ -517,8 +517,7 @@
             this.txtUsername.IconPadding = 10;
             this.txtUsername.IconRight = null;
             this.txtUsername.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUsername.Lines = new string[] {
-        "admin"};
+            this.txtUsername.Lines = new string[0];
             this.txtUsername.Location = new System.Drawing.Point(57, 140);
             this.txtUsername.MaxLength = 32767;
             this.txtUsername.MinimumSize = new System.Drawing.Size(100, 35);
@@ -540,7 +539,7 @@
             stateProperties13.ForeColor = System.Drawing.Color.Empty;
             stateProperties13.PlaceholderForeColor = System.Drawing.Color.Empty;
             this.txtUsername.OnHoverState = stateProperties13;
-            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
+            stateProperties14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(168)))), ((int)(((byte)(147)))));
             stateProperties14.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             stateProperties14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             stateProperties14.PlaceholderForeColor = System.Drawing.Color.Empty;

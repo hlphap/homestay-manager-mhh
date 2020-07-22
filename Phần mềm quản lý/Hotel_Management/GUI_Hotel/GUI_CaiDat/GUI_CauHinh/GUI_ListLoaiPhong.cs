@@ -25,7 +25,6 @@ namespace Hotel_Management.GUI_CaiDat
             if (txb_tenloaiphong.ReadOnly == true)
             {
                 txb_giaphong.ReadOnly = false;
-                txb_donvi.ReadOnly = false;
                 txb_tenloaiphong.ReadOnly = false;
                 txb_trangthietbi.ReadOnly = false;
                 txb_malp.ReadOnly = true;
@@ -33,7 +32,6 @@ namespace Hotel_Management.GUI_CaiDat
             else
             {
                 txb_giaphong.ReadOnly = true;
-                txb_donvi.ReadOnly = true;
                 txb_malp.ReadOnly = true;
                 txb_tenloaiphong.ReadOnly = true;
                 txb_trangthietbi.ReadOnly = true;
@@ -74,11 +72,10 @@ namespace Hotel_Management.GUI_CaiDat
         {
             //AddDuLieu
             DTO_LoaiPhong objlp = new DTO_LoaiPhong();
-            objlp.Malp = this.txb_malp.Text;
+            objlp.Malp = txb_malp.Text;
             objlp.Tenlp = this.txb_tenloaiphong.Text;
             objlp.Gia = this.txb_giaphong.Text;
             objlp.Trangthietbi = this.txb_trangthietbi.Text;
-            objlp.Donvi = this.txb_donvi.Text;
             lb_ten.Text = txb_tenloaiphong.Text;
             lb_gia.Text = txb_giaphong.Text;
             if (kt == 0)
@@ -125,7 +122,6 @@ namespace Hotel_Management.GUI_CaiDat
             objlp.Malp = txb_malp.Text;
             objlp.Tenlp = txb_tenloaiphong.Text;
             objlp.Gia = txb_giaphong.Text;
-            objlp.Donvi = txb_donvi.Text;
             objlp.Trangthietbi = txb_trangthietbi.Text;
             if (bus_lp.Delete(objlp)!="0")
             {

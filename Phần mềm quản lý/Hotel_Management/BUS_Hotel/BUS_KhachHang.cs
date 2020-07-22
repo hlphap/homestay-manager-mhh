@@ -23,12 +23,12 @@ namespace BUS_Hotel
 
         public string SelectAll(List<DTO_KhachHang> lsobj)
         {
-            return dal.selectAll(lsobj);
+            return dal.SelectAll(lsobj);
         }
 
         public string Delete(DTO_KhachHang obj)
         {
-            return dal.delete(obj);
+            return dal.Delete(obj);
         }
 
         public string Insert(DTO_KhachHang obj)
@@ -38,13 +38,9 @@ namespace BUS_Hotel
 
         public string Update(DTO_KhachHang obj)
         {
-            return dal.update(obj);
+            return dal.Update(obj);
         }
-
-        public string Search(string kq, List<DTO_KhachHang> lsobj)
-        {
-            return dal.search(kq, lsobj);
-        }
+ 
         public string TaoMaKH()
         {
             return dal.TaoMa();

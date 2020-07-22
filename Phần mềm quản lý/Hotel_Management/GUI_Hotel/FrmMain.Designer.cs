@@ -61,9 +61,7 @@
             this.KeoTha = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panelChinh = new System.Windows.Forms.Panel();
             this.panelCaiDat = new System.Windows.Forms.Panel();
-            this.btnQuanTri = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnCauHinh = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnTaiKhoan = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -129,8 +127,9 @@
             this.bt_ThongKe.BorderRadius = 0;
             this.bt_ThongKe.ButtonText = "      Thống kê";
             this.bt_ThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_ThongKe.DisabledColor = System.Drawing.Color.Gray;
+            this.bt_ThongKe.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.bt_ThongKe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bt_ThongKe.Enabled = false;
             this.bt_ThongKe.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_ThongKe.Iconcolor = System.Drawing.Color.Transparent;
             this.bt_ThongKe.Iconimage = ((System.Drawing.Image)(resources.GetObject("bt_ThongKe.Iconimage")));
@@ -180,6 +179,7 @@
             this.bt_BaoCaoPhong.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_BaoCaoPhong.DisabledColor = System.Drawing.Color.Gray;
             this.bt_BaoCaoPhong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bt_BaoCaoPhong.Enabled = false;
             this.bt_BaoCaoPhong.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_BaoCaoPhong.Iconcolor = System.Drawing.Color.Transparent;
             this.bt_BaoCaoPhong.Iconimage = null;
@@ -219,6 +219,7 @@
             this.bt_BCDoanhThu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_BCDoanhThu.DisabledColor = System.Drawing.Color.Gray;
             this.bt_BCDoanhThu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.bt_BCDoanhThu.Enabled = false;
             this.bt_BCDoanhThu.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_BCDoanhThu.Iconcolor = System.Drawing.Color.Transparent;
             this.bt_BCDoanhThu.Iconimage = null;
@@ -256,8 +257,9 @@
             this.btnBaoCao.BorderRadius = 0;
             this.btnBaoCao.ButtonText = "      Báo cáo";
             this.btnBaoCao.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBaoCao.DisabledColor = System.Drawing.Color.Gray;
+            this.btnBaoCao.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.btnBaoCao.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBaoCao.Enabled = false;
             this.btnBaoCao.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBaoCao.Iconcolor = System.Drawing.Color.Transparent;
             this.btnBaoCao.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnBaoCao.Iconimage")));
@@ -627,7 +629,7 @@
             this.bt_ThongTinChung.BorderRadius = 0;
             this.bt_ThongTinChung.ButtonText = "      Thông tin chung";
             this.bt_ThongTinChung.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_ThongTinChung.DisabledColor = System.Drawing.Color.Gray;
+            this.bt_ThongTinChung.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.bt_ThongTinChung.Dock = System.Windows.Forms.DockStyle.Top;
             this.bt_ThongTinChung.Iconcolor = System.Drawing.Color.Transparent;
             this.bt_ThongTinChung.Iconimage = ((System.Drawing.Image)(resources.GetObject("bt_ThongTinChung.Iconimage")));
@@ -775,52 +777,11 @@
             // panelCaiDat
             // 
             this.panelCaiDat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.panelCaiDat.Controls.Add(this.btnQuanTri);
             this.panelCaiDat.Controls.Add(this.btnCauHinh);
-            this.panelCaiDat.Controls.Add(this.btnTaiKhoan);
             this.panelCaiDat.Location = new System.Drawing.Point(1062, 19);
             this.panelCaiDat.Name = "panelCaiDat";
-            this.panelCaiDat.Size = new System.Drawing.Size(109, 115);
+            this.panelCaiDat.Size = new System.Drawing.Size(109, 37);
             this.panelCaiDat.TabIndex = 0;
-            // 
-            // btnQuanTri
-            // 
-            this.btnQuanTri.Active = false;
-            this.btnQuanTri.Activecolor = System.Drawing.Color.Transparent;
-            this.btnQuanTri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.btnQuanTri.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnQuanTri.BorderRadius = 0;
-            this.btnQuanTri.ButtonText = "   Quản trị";
-            this.btnQuanTri.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnQuanTri.DisabledColor = System.Drawing.Color.Gray;
-            this.btnQuanTri.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnQuanTri.Font = new System.Drawing.Font("Segoe UI Semibold", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanTri.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnQuanTri.Iconimage = null;
-            this.btnQuanTri.Iconimage_right = null;
-            this.btnQuanTri.Iconimage_right_Selected = null;
-            this.btnQuanTri.Iconimage_Selected = null;
-            this.btnQuanTri.IconMarginLeft = 0;
-            this.btnQuanTri.IconMarginRight = 0;
-            this.btnQuanTri.IconRightVisible = true;
-            this.btnQuanTri.IconRightZoom = 0D;
-            this.btnQuanTri.IconVisible = true;
-            this.btnQuanTri.IconZoom = 35D;
-            this.btnQuanTri.IsTab = false;
-            this.btnQuanTri.Location = new System.Drawing.Point(0, 74);
-            this.btnQuanTri.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnQuanTri.Name = "btnQuanTri";
-            this.btnQuanTri.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.btnQuanTri.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnQuanTri.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnQuanTri.selected = false;
-            this.btnQuanTri.Size = new System.Drawing.Size(109, 34);
-            this.btnQuanTri.TabIndex = 9;
-            this.btnQuanTri.Text = "   Quản trị";
-            this.btnQuanTri.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuanTri.Textcolor = System.Drawing.Color.White;
-            this.btnQuanTri.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuanTri.Click += new System.EventHandler(this.btnQuanTri_Click);
             // 
             // btnCauHinh
             // 
@@ -846,7 +807,7 @@
             this.btnCauHinh.IconVisible = true;
             this.btnCauHinh.IconZoom = 35D;
             this.btnCauHinh.IsTab = false;
-            this.btnCauHinh.Location = new System.Drawing.Point(0, 37);
+            this.btnCauHinh.Location = new System.Drawing.Point(0, 0);
             this.btnCauHinh.Margin = new System.Windows.Forms.Padding(4);
             this.btnCauHinh.Name = "btnCauHinh";
             this.btnCauHinh.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
@@ -860,45 +821,6 @@
             this.btnCauHinh.Textcolor = System.Drawing.Color.White;
             this.btnCauHinh.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCauHinh.Click += new System.EventHandler(this.btnCauHinh_Click);
-            // 
-            // btnTaiKhoan
-            // 
-            this.btnTaiKhoan.Active = false;
-            this.btnTaiKhoan.Activecolor = System.Drawing.Color.Transparent;
-            this.btnTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.btnTaiKhoan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTaiKhoan.BorderRadius = 0;
-            this.btnTaiKhoan.ButtonText = "   Tài khoản";
-            this.btnTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTaiKhoan.DisabledColor = System.Drawing.Color.Gray;
-            this.btnTaiKhoan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTaiKhoan.Font = new System.Drawing.Font("Segoe UI Semibold", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaiKhoan.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnTaiKhoan.Iconimage = null;
-            this.btnTaiKhoan.Iconimage_right = null;
-            this.btnTaiKhoan.Iconimage_right_Selected = null;
-            this.btnTaiKhoan.Iconimage_Selected = null;
-            this.btnTaiKhoan.IconMarginLeft = 0;
-            this.btnTaiKhoan.IconMarginRight = 0;
-            this.btnTaiKhoan.IconRightVisible = true;
-            this.btnTaiKhoan.IconRightZoom = 0D;
-            this.btnTaiKhoan.IconVisible = true;
-            this.btnTaiKhoan.IconZoom = 35D;
-            this.btnTaiKhoan.IsTab = false;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 0);
-            this.btnTaiKhoan.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.btnTaiKhoan.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.btnTaiKhoan.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnTaiKhoan.selected = false;
-            this.btnTaiKhoan.Size = new System.Drawing.Size(109, 37);
-            this.btnTaiKhoan.TabIndex = 4;
-            this.btnTaiKhoan.Text = "   Tài khoản";
-            this.btnTaiKhoan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.Textcolor = System.Drawing.Color.White;
-            this.btnTaiKhoan.TextFont = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click_1);
             // 
             // FrmMain
             // 
@@ -971,9 +893,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton bt_BCDoanhThu;
         private Bunifu.Framework.UI.BunifuFlatButton btnBaoCao;
         private System.Windows.Forms.Panel panelChinh;
-        private System.Windows.Forms.Panel panelCaiDat;
-        private Bunifu.Framework.UI.BunifuFlatButton btnTaiKhoan;
-        private Bunifu.Framework.UI.BunifuFlatButton btnCauHinh;
-        private Bunifu.Framework.UI.BunifuFlatButton btnQuanTri;
+        public System.Windows.Forms.Panel panelCaiDat;
+        public Bunifu.Framework.UI.BunifuFlatButton btnCauHinh;
     }
 }

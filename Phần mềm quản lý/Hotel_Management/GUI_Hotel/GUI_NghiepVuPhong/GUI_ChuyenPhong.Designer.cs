@@ -35,7 +35,7 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txb_GioiTinh = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.txb_SinhNhat = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.txb_NgaySinh = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dropDown_Phong = new Bunifu.Framework.UI.BunifuDropdown();
@@ -81,7 +81,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.txb_GioiTinh);
-            this.panel1.Controls.Add(this.txb_SinhNhat);
+            this.panel1.Controls.Add(this.txb_NgaySinh);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.dropDown_Phong);
@@ -141,29 +141,29 @@
             this.txb_GioiTinh.TabIndex = 153;
             this.txb_GioiTinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // txb_SinhNhat
+            // txb_NgaySinh
             // 
-            this.txb_SinhNhat.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txb_SinhNhat.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txb_SinhNhat.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txb_SinhNhat.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txb_SinhNhat.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txb_SinhNhat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.txb_SinhNhat.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.txb_SinhNhat.HintText = "Sinh nhật";
-            this.txb_SinhNhat.isPassword = false;
-            this.txb_SinhNhat.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.txb_SinhNhat.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.txb_SinhNhat.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
-            this.txb_SinhNhat.LineThickness = 1;
-            this.txb_SinhNhat.Location = new System.Drawing.Point(104, 153);
-            this.txb_SinhNhat.Margin = new System.Windows.Forms.Padding(4);
-            this.txb_SinhNhat.MaxLength = 32767;
-            this.txb_SinhNhat.Name = "txb_SinhNhat";
-            this.txb_SinhNhat.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
-            this.txb_SinhNhat.Size = new System.Drawing.Size(269, 34);
-            this.txb_SinhNhat.TabIndex = 152;
-            this.txb_SinhNhat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txb_NgaySinh.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txb_NgaySinh.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txb_NgaySinh.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txb_NgaySinh.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txb_NgaySinh.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_NgaySinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
+            this.txb_NgaySinh.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
+            this.txb_NgaySinh.HintText = "Sinh nhật";
+            this.txb_NgaySinh.isPassword = false;
+            this.txb_NgaySinh.LineFocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
+            this.txb_NgaySinh.LineIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
+            this.txb_NgaySinh.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(172)))), ((int)(((byte)(193)))));
+            this.txb_NgaySinh.LineThickness = 1;
+            this.txb_NgaySinh.Location = new System.Drawing.Point(104, 153);
+            this.txb_NgaySinh.Margin = new System.Windows.Forms.Padding(4);
+            this.txb_NgaySinh.MaxLength = 32767;
+            this.txb_NgaySinh.Name = "txb_NgaySinh";
+            this.txb_NgaySinh.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.txb_NgaySinh.Size = new System.Drawing.Size(269, 34);
+            this.txb_NgaySinh.TabIndex = 152;
+            this.txb_NgaySinh.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label1
             // 
@@ -719,7 +719,7 @@
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuDropdown dropDown_Phong;
         private Bunifu.Framework.UI.BunifuDropdown dropDown_LoaiPhong;
-        private Bunifu.Framework.UI.BunifuMaterialTextbox txb_SinhNhat;
+        private Bunifu.Framework.UI.BunifuMaterialTextbox txb_NgaySinh;
         private Bunifu.Framework.UI.BunifuMaterialTextbox txb_GioiTinh;
     }
 }

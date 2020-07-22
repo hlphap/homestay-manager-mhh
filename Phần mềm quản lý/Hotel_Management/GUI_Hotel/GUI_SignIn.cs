@@ -46,17 +46,25 @@ namespace Hotel_Management
             if ((txtUsername.Text != "") && (txtPassword.Text != ""))
             {
                 DTO_SignIn account = new DTO_SignIn(txtUsername.Text, txtPassword.Text);
-               
+                if ((busSignIn.SignIn(account) == "0"))
+                {
+                    string result = busSignIn.SelectAll(account.user);
+                    MaNV = result;
+                    this.Hide();
+
+                    frm.Message = MaNV;
+                    frm.btnCauHinh.Visible = false;
+                    frm.Show();
+                    return;
+
+                }
                 if ((busSignIn.SignIn(account) == "1"))
                 {
                     string result = busSignIn.SelectAll(account.user);
                     MaNV = result;
                     frmload.Show();
-
                     time_Loading.Enabled = true;
                     time_Loading.Start();
-                  
-  
                 }
                 else
                 {

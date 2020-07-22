@@ -16,28 +16,8 @@ namespace DTO_Hotel
         private string cmnd;
         private string quoctich;
         private string sdt;
-
-        //public DTO_KhachHang(string makh, string tenkh, string diachi, string sex, string cmnd, string quoctich, string sdt)
-        //{
-        //    this.Makh = makh;
-        //    this.Tenkh = tenkh;
-        //    this.Diachi = diachi;
-        //    this.Gioitinh = sex;
-        //    this.Cmnd = cmnd;
-        //    this.Quoctich = quoctich;
-        //    this.Sdt = sdt;
-        //}
-
-        //public DTO_KhachHang(DataRow row)
-        //{
-        //    this.Makh = row["MAKH"].ToString();
-        //    this.Tenkh = row["TENKH"].ToString();
-        //    this.Diachi = row["DIACHI"].ToString();
-        //    this.Gioitinh = row["GIOITINH  "].ToString();
-        //    this.Cmnd = row["CMND"].ToString();
-        //    this.Quoctich = row["QUOCTICH"].ToString();
-        //    this.Sdt = row["SDT"].ToString();
-        //}
+        private string ngaysinh;
+       
 
         public string Makh { get => makh; set => makh = value; }
         public string Tenkh { get => tenkh; set => tenkh = value; }
@@ -46,5 +26,6 @@ namespace DTO_Hotel
         public string Cmnd { get => cmnd; set => cmnd = value; }
         public string Quoctich { get => quoctich; set => quoctich = value; }
         public string Sdt { get => sdt; set => sdt = value; }
+        public string Ngaysinh { get => ngaysinh; set => ngaysinh = value; }
     }
 }

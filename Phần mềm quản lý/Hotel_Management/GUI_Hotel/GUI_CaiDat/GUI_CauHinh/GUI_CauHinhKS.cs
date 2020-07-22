@@ -41,19 +41,30 @@ namespace Hotel_Management.GUI_CaiDat
         public void LoadListPhong()
         {
             flp_lsphong.Controls.Clear();
-            List<DTO_Phong> lsobj = new List<DTO_Phong>();
-            string result = this.bus.SelectWithCost(lsobj);
+            List<DTO_Phong> lsobj_p = new List<DTO_Phong>();
+            List<DTO_LoaiPhong> lsobj_lp = new List<DTO_LoaiPhong>();
+            string result = this.bus.SelectAll(lsobj_p);
+            string result1 = this.bus_lp.SelectAll(lsobj_lp);
             if (result != "0")
             {
                 MessageBox.Show("Load list have been fail. \n" + result);
                 return;
             }
             int i = 0;
-            foreach (DTO_Phong item in lsobj)
+            var fullPhong = from x in lsobj_lp
+                            join y in lsobj_p on x.Malp equals y.Malp
+                            select new
+                            {
+                                Sophong = y.Sophong,
+                                Status = y.Status,
+                                Gia = x.Gia,
+                                Tenlp = x.Tenlp
+                            };
+            foreach (var item in fullPhong)
             {
                 GUI_ListPhong phong = new GUI_ListPhong();
                 phong.txb_sophong.Text = item.Sophong;
-                phong.txb_loaiphong.Text = item.Malp;
+                phong.combobox_lp.Text = item.Tenlp;
                 phong.txb_tinhtrang.Text = item.Status;
                 phong.txb_giaphong.Text = item.Gia;
                 phong.lb_ten.Text = item.Sophong;
@@ -85,7 +96,6 @@ namespace Hotel_Management.GUI_CaiDat
                 loaiphong.txb_malp.Text = item.Malp;
                 loaiphong.txb_giaphong.Text = item.Gia;
                 loaiphong.txb_trangthietbi.Text = item.Trangthietbi;
-                loaiphong.txb_donvi.Text = item.Donvi;
                 loaiphong.lb_ten.Text = item.Tenlp;
                 loaiphong.lb_gia.Text = item.Gia.ToString();
                 i++;
@@ -150,7 +160,8 @@ namespace Hotel_Management.GUI_CaiDat
             GUI_CaiDat.GUI_ListLoaiPhong x1_LoaiPhong = new GUI_CaiDat.GUI_ListLoaiPhong();
             new_lp++;
             x1_LoaiPhong.ReadOnlyTb();
-            x1_LoaiPhong.txb_malp.ReadOnly = false;
+            x1_LoaiPhong.txb_malp.Text = bus_lp.TaoMaLP();
+            x1_LoaiPhong.txb_malp.ReadOnly = true;
             x1_LoaiPhong.lb_stt.Text = new_lp.ToString();
             x1_LoaiPhong.ShowPanel();
             x1_LoaiPhong.btn_luu.Visible = true;
@@ -163,9 +174,10 @@ namespace Hotel_Management.GUI_CaiDat
         private void btnAddPhong_Click(object sender, EventArgs e)
         {
             GUI_CaiDat.GUI_ListPhong x1Phong = new GUI_CaiDat.GUI_ListPhong();
-            new_lp++;
+            new_p++;
             x1Phong.ReadOnlyTb();
-            x1Phong.txb_sophong.ReadOnly = false;
+            x1Phong.txb_tinhtrang.ReadOnly = true;
+            x1Phong.txb_giaphong.ReadOnly = true;
             x1Phong.lb_stt.Text = new_p.ToString();
             x1Phong.ShowPanel();
             x1Phong.bt_Luu.Visible = true;

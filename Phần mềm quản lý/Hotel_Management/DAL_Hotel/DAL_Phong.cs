@@ -59,14 +59,14 @@ namespace DAL_Hotel
         public string selectAll(List<DTO_Phong> lsObj)
         {
             string query = string.Empty;
-            query += " EXEC USP_GETROOM";
+            query += "USP_GETROOM";
 
             using (SqlConnection conn = new SqlConnection(connectionSTR))
             {
                 using (SqlCommand comm = new SqlCommand())
                 {
                     comm.Connection = conn;
-                    comm.CommandType = CommandType.Text;
+                    comm.CommandType = CommandType.StoredProcedure;
                     comm.CommandText = query;
 
                     try
@@ -97,47 +97,7 @@ namespace DAL_Hotel
             return "0";
         }
 
-        public string selectAllwithCost(List<DTO_Phong> lsObj)
-        {
-            string query = string.Empty;
-            query += " EXEC USP_GETCOSTROOM";
-
-            using (SqlConnection conn = new SqlConnection(connectionSTR))
-            {
-                using (SqlCommand comm = new SqlCommand())
-                {
-                    comm.Connection = conn;
-                    comm.CommandType = CommandType.Text;
-                    comm.CommandText = query;
-
-                    try
-                    {
-                        conn.Open();
-
-                        SqlDataReader reader = comm.ExecuteReader();
-                        if (reader.HasRows == true)
-                        {
-                            lsObj.Clear();
-                            while (reader.Read())
-                            {
-                                DTO_Phong obj = new DTO_Phong();
-                                obj.Sophong = reader["SOPHONG"].ToString();
-                                obj.Status = reader["TINHTRANG"].ToString();
-                                obj.Malp = reader["MALP"].ToString();
-                                obj.Gia = reader["GIA"].ToString();
-                                lsObj.Add(obj);
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        conn.Close();
-                        return "Selecting fails\n" + ex.Message + "\n" + ex.StackTrace;
-                    }
-                }
-            }
-            return "0";
-        }
+      
 
         public string selectAllBySophong(List<DTO_Phong> lsObj, int sophong)
         {

@@ -41,9 +41,6 @@ namespace BUS_Hotel
             return dal.search(kq, lsobj);
         }
 
-        public string SelectWithCost(List<DTO_Phong> lsObj)
-        {
-            return dal.selectAllwithCost(lsObj);
-        }
+
     }
 }

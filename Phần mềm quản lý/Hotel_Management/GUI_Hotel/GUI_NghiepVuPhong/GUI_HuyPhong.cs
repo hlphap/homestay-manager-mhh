@@ -47,6 +47,7 @@ namespace Hotel_Management.GUI_NghiepVuPhong
                              TenKH = kh.Tenkh,
                              CMND = kh.Cmnd,
                              GioiTinh = kh.Gioitinh,
+                             NgaySinh = kh.Ngaysinh,
                              SDT = kh.Sdt,
                              QuocTich = kh.Quoctich,
                              DiaChi = kh.Diachi,
@@ -64,6 +65,7 @@ namespace Hotel_Management.GUI_NghiepVuPhong
                 txb_TenKH.Text = item.TenKH;
                 txb_CMND.Text = item.CMND;
                 txb_GioiTinh.Text = item.GioiTinh;
+                txb_SinhNhat.Text = item.NgaySinh;
                 txb_SDT.Text = item.SDT;
                 txb_QuocTich.Text = item.QuocTich;
                 txb_DiaChi.Text = item.DiaChi;
@@ -96,6 +98,7 @@ namespace Hotel_Management.GUI_NghiepVuPhong
                              TenKH = kh.Tenkh,
                              CMND = kh.Cmnd,
                              GioiTinh = kh.Gioitinh,
+                             NgaySinh = kh.Ngaysinh,
                              SDT = kh.Sdt,
                              QuocTich = kh.Quoctich,
                              DiaChi = kh.Diachi,
@@ -113,6 +116,7 @@ namespace Hotel_Management.GUI_NghiepVuPhong
                 txb_TenKH.Text = item.TenKH;
                 txb_CMND.Text = item.CMND;
                 txb_GioiTinh.Text = item.GioiTinh;
+                txb_SinhNhat.Text = item.NgaySinh;
                 txb_SDT.Text = item.SDT;
                 txb_QuocTich.Text = item.QuocTich;
                 txb_DiaChi.Text = item.DiaChi;
@@ -126,13 +130,19 @@ namespace Hotel_Management.GUI_NghiepVuPhong
         }
         private void bt_Huy_Click(object sender, EventArgs e)
         {
-           
+            if (txb_MaKH.Text =="")
+            {
+                MessageBox.Show("Chưa nhập thông tin đơn đặt phòng cần hủy", "Erro");
+                return;
+            }
             DTO_CTHD obj_cthd = new DTO_CTHD();
             DTO_CTDV obj_ctdv = new DTO_CTDV();
             DTO_HoaDon obj_hd = new DTO_HoaDon();
             obj_hd.MaCTHD = get_MACTHD;
             obj_ctdv.Macthd = get_MACTHD;
             obj_cthd.Macthd = get_MACTHD;
+            
+
             if (bus_ctdv.DeleteAll(obj_ctdv)!="0")
             {
                 MessageBox.Show("Huy phong that bai");
@@ -148,6 +158,30 @@ namespace Hotel_Management.GUI_NghiepVuPhong
                 MessageBox.Show("Huy phong that bai");
                 return;
             }
+            List<DTO_LoaiPhong> lsobj_lp = new List<DTO_LoaiPhong>();
+            List<DTO_Phong> lsobj_p = new List<DTO_Phong>();
+
+            string result = bus_p.SelectAll(lsobj_p);
+            string result1 = bus_lp.SelectAll(lsobj_lp);
+
+            var Malp = from x in lsobj_p
+                       join y in lsobj_lp on x.Malp equals y.Malp
+                       where x.Sophong == txb_SoPhong.Text
+                       select new
+                       {
+                           SoPhong = x.Sophong,
+                           TrangThai = "EMPTY",
+                           MaLP = x.Malp,
+                       };
+
+            DTO_Phong objp = new DTO_Phong();
+            foreach (var x in Malp)
+            {
+                objp.Sophong = x.SoPhong;
+                objp.Malp = x.MaLP;
+                objp.Status = x.TrangThai;
+            }
+            bus_p.Update(objp);
             MessageBox.Show("Huy phong thanh cong");
 
 

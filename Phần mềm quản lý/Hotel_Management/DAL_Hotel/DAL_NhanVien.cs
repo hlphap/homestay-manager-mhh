@@ -33,7 +33,6 @@ namespace DAL_Hotel
 
                     comm.Parameters.AddWithValue("@MANV", obj.Manv);
                     comm.Parameters.AddWithValue("@TENNV", obj.Name);
-                    comm.Parameters.AddWithValue("@MALNV", obj.Malnv);
                     comm.Parameters.AddWithValue("@NGSINH", obj.Date);
                     comm.Parameters.AddWithValue("@GIOITINH", obj.Sex);
                     comm.Parameters.AddWithValue("@SDT", obj.Sdt);
@@ -81,7 +80,6 @@ namespace DAL_Hotel
                                 DTO_NhanVien obj = new DTO_NhanVien();
                                 obj.Manv = reader["MANV"].ToString();
                                 obj.Name = reader["TENNV"].ToString();
-                                obj.Malnv = reader["GIADV"].ToString();
                                 obj.Date = reader["NGSINH"].ToString();
                                 obj.Sex = reader["GIOITINH"].ToString();
                                 obj.Sdt = reader["SDT"].ToString();
@@ -131,7 +129,6 @@ namespace DAL_Hotel
                                 DTO_NhanVien obj = new DTO_NhanVien();
                                 obj.Manv = reader["MANV"].ToString();
                                 obj.Name = reader["TENNV"].ToString();
-                                obj.Malnv = reader["GIADV"].ToString();
                                 obj.Date = reader["NGSINH"].ToString();
                                 obj.Sex = reader["GIOITINH"].ToString();
                                 obj.Sdt = reader["SDT"].ToString();
@@ -179,7 +176,6 @@ namespace DAL_Hotel
                                 DTO_NhanVien obj = new DTO_NhanVien();
                                 obj.Manv = reader["MANV"].ToString();
                                 obj.Name = reader["TENNV"].ToString();
-                                obj.Malnv = reader["GIADV"].ToString();
                                 obj.Date = reader["NGSINH"].ToString();
                                 obj.Sex = reader["GIOITINH"].ToString();
                                 obj.Sdt = reader["SDT"].ToString();
@@ -240,7 +236,6 @@ namespace DAL_Hotel
                     comm.CommandText = query;
                     comm.Parameters.AddWithValue("@MANV", obj.Manv);
                     comm.Parameters.AddWithValue("@TENNV", obj.Name);
-                    comm.Parameters.AddWithValue("@MALNV", obj.Malnv);
                     comm.Parameters.AddWithValue("@NGSINH", obj.Date);
                     comm.Parameters.AddWithValue("@GIOITINH", obj.Sex);
                     comm.Parameters.AddWithValue("@SDT", obj.Sdt);

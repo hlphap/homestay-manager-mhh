@@ -47,12 +47,10 @@
     <Compile Include="BUS_DichVu.cs" />
     <Compile Include="BUS_HoaDon.cs" />
     <Compile Include="BUS_KhachHang.cs" />
-    <Compile Include="BUS_LoaiNV.cs" />
     <Compile Include="BUS_LoaiPhong.cs" />
     <Compile Include="BUS_NhanVien.cs" />
     <Compile Include="BUS_Phong.cs" />
     <Compile Include="BUS_SignIn.cs" />
-    <Compile Include="BUS_ThongTinKS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

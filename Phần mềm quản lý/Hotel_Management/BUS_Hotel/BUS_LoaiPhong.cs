@@ -40,5 +40,10 @@ namespace BUS_Hotel
         {
             return dal.Search(kq, lsobj);
         }
+
+        public string TaoMaLP()
+        {
+            return dal.TaoMa();
+        }
     }
 }

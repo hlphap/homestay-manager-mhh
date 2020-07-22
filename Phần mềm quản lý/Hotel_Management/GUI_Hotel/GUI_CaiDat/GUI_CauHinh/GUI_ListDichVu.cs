@@ -47,5 +47,10 @@ namespace Hotel_Management.GUI_CaiDat
         {
             
         }
+
+        private void bt_Sua_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

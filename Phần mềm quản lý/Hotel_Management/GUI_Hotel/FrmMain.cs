@@ -23,9 +23,8 @@ namespace Hotel_Management
         GUI_DanhSach.GUI_DSHoaDon gui_HD = new GUI_DanhSach.GUI_DSHoaDon();
         GUI_ThongTinChung.GUI_ThongTinChung gui_TTC = new GUI_ThongTinChung.GUI_ThongTinChung();
         GUI_SoDoPhong.GUI_SoDoPhong gui_SDP = new GUI_SoDoPhong.GUI_SoDoPhong();
-        GUI_BaoCao.GUI_BaoCaoDoanhThu.GUI_BCDoanhThu gui_BCDT = new GUI_BaoCao.GUI_BaoCaoDoanhThu.GUI_BCDoanhThu();
-        GUI_BaoCao.GUI_BaoCaoPhong.GUI_BCPhong gui_BCP = new GUI_BaoCao.GUI_BaoCaoPhong.GUI_BCPhong();
-        GUI_ThongKe.GUI_ThongKe gui_TK = new GUI_ThongKe.GUI_ThongKe();
+      
+     
         public FrmMain()
         {
             InitializeComponent();
@@ -83,7 +82,7 @@ namespace Hotel_Management
             
         }
 
-        private void btnDatPhong_Click(object sender, EventArgs e)
+        public void btnDatPhong_Click(object sender, EventArgs e)
         {
             panelChinh.Controls.Clear();
             gui_DP.Message = Message;
@@ -135,21 +134,21 @@ namespace Hotel_Management
         private void bt_BCDoanhThu_Click(object sender, EventArgs e)
         {
             panelChinh.Controls.Clear();
-            panelChinh.Controls.Add(gui_BCDT);
+          
         }
         
         //Bao Cáo phòng
         private void bt_BaoCaoPhong_Click(object sender, EventArgs e)
         {
             panelChinh.Controls.Clear();
-            panelChinh.Controls.Add(gui_BCP);
+         
         }
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             SidePanel.Height = bt_ThongKe.Height;
             SidePanel.Top = bt_ThongKe.Top;
             panelChinh.Controls.Clear();
-            panelChinh.Controls.Add(gui_TK);
+         
         }
 
         private void btnCaiDat_Click(object sender, EventArgs e)
@@ -166,9 +165,7 @@ namespace Hotel_Management
 
         private void btnTaiKhoan_Click_1(object sender, EventArgs e)
         {
-            HidePanel();
-            GUI_CaiDat.GUI_TaiKhoan gui_tk = new GUI_CaiDat.GUI_TaiKhoan();
-            gui_tk.ShowDialog();
+
         }
 
         private void btnCauHinh_Click(object sender, EventArgs e)
@@ -180,12 +177,9 @@ namespace Hotel_Management
 
         private void btnQuanTri_Click(object sender, EventArgs e)
         {
-            HidePanel();
-            GUI_CaiDat.GUI_QuanTri gui_qt = new GUI_CaiDat.GUI_QuanTri();
-            gui_qt.ShowDialog();
-            
+
         }
 
-       
+
     }
 }

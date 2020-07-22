@@ -29,6 +29,7 @@ namespace Hotel_Management.GUI_NghiepVuPhong
         private void LoadLoaiPhong()
 
         {
+            dropDown_LoaiPhong.Items.Clear();
             List<DTO_LoaiPhong> lsobj_lp = new List<DTO_LoaiPhong>();
             string result = this.bus_lp.SelectAll(lsobj_lp);
             if (result != "0")
@@ -45,14 +46,14 @@ namespace Hotel_Management.GUI_NghiepVuPhong
         }
         private void LoadPhong()
         {
-
+            dropDown_Phong.Items.Clear();
             List<DTO_Phong> lsobj = new List<DTO_Phong>();
             List<DTO_LoaiPhong> lsobjLP = new List<DTO_LoaiPhong>();
             string result = this.bus_p.SelectAll(lsobj);
             string result1 = this.bus_lp.SelectAll(lsobjLP);
             var listphong = from x in lsobj
                             join y in lsobjLP on x.Malp equals y.Malp
-                            where y.Tenlp == dropDown_LoaiPhong.selectedValue
+                            where ((y.Tenlp == dropDown_LoaiPhong.selectedValue) && (x.Status != "USED"))
                             select new
                             {
                                 Sophong = x.Sophong
@@ -85,6 +86,7 @@ namespace Hotel_Management.GUI_NghiepVuPhong
                              TenKH = kh.Tenkh,
                              CMND = kh.Cmnd,
                              GioiTinh = kh.Gioitinh,
+                             NgaySinh = kh.Ngaysinh,
                              SDT = kh.Sdt,
                              QuocTich = kh.Quoctich,
                              DiaChi = kh.Diachi,
@@ -92,16 +94,17 @@ namespace Hotel_Management.GUI_NghiepVuPhong
                              NgayDi = cthd.Ngaydi,
                              LoaiPhong = lp.Tenlp,
                              SoPhong = p.Sophong,
-                             SoNguoi = "1",
-                             MACTHD = cthd.Macthd
+                             MACTHD = cthd.Macthd,
+                             SoNguoi = "1"
                          }
-                );
+                ) ;
 
             foreach (var item in query)
             {
                 txb_TenKH.Text = item.TenKH;
                 txb_CMND.Text = item.CMND;
                 txb_GioiTinh.Text = item.GioiTinh;
+                txb_NgaySinh.Text = item.NgaySinh;
                 txb_SDT.Text = item.SDT;
                 txb_QuocTich.Text = item.QuocTich;
                 txb_DiaChi.Text = item.DiaChi;
@@ -134,6 +137,7 @@ namespace Hotel_Management.GUI_NghiepVuPhong
                              TenKH = kh.Tenkh,
                              CMND = kh.Cmnd,
                              GioiTinh = kh.Gioitinh,
+                             NgaySinh = kh.Ngaysinh,
                              SDT = kh.Sdt,
                              QuocTich = kh.Quoctich,
                              DiaChi = kh.Diachi,
@@ -144,13 +148,14 @@ namespace Hotel_Management.GUI_NghiepVuPhong
                              SoNguoi = "1",
                              MACTHD = cthd.Macthd
                          }
-                );
+                ) ;
 
             foreach (var item in query)
             {
                 txb_TenKH.Text = item.TenKH;
                 txb_CMND.Text = item.CMND;
                 txb_GioiTinh.Text = item.GioiTinh;
+                txb_NgaySinh.Text = item.NgaySinh;
                 txb_SDT.Text = item.SDT;
                 txb_QuocTich.Text = item.QuocTich;
                 txb_DiaChi.Text = item.DiaChi;
@@ -187,12 +192,65 @@ namespace Hotel_Management.GUI_NghiepVuPhong
         {
             DTO_CTHD obj_cthd = new DTO_CTHD();
             obj_cthd.Macthd = get_MACTHD;
-            obj_cthd.Sophong = dropDown_Phong.selectedValue;
+            if (dropDown_Phong.selectedIndex != -1)
+            {
+                obj_cthd.Sophong = dropDown_Phong.selectedValue;
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn phòng chuyển đến", "Erro");
+                return;
+            }
             if(bus_cthd.Update(obj_cthd)!="0")
             {
                 MessageBox.Show("Chuyển phòng thất bại");
                 return;
             }
+            List<DTO_LoaiPhong> lsobj_lp = new List<DTO_LoaiPhong>();
+            List<DTO_Phong> lsobj_p = new List<DTO_Phong>();
+
+            string result = bus_p.SelectAll(lsobj_p);
+            string result1 = bus_lp.SelectAll(lsobj_lp);
+
+            var Malp = from x in lsobj_p
+                       join y in lsobj_lp on x.Malp equals y.Malp
+                       where x.Sophong == txb_SoPhong.Text
+                       select new
+                       {
+                           SoPhong = x.Sophong,
+                           TrangThai = "EMPTY",
+                           MaLP = x.Malp,
+                       };
+
+            DTO_Phong objp = new DTO_Phong();
+            foreach (var x in Malp)
+            {
+                objp.Sophong = x.SoPhong;
+                objp.Malp = x.MaLP;
+                objp.Status = x.TrangThai;
+            }
+            bus_p.Update(objp);
+
+            
+
+            var Malp1 = from x in lsobj_p
+                       join y in lsobj_lp on x.Malp equals y.Malp
+                       where x.Sophong == dropDown_Phong.selectedValue
+                       select new
+                       {
+                           SoPhong = x.Sophong,
+                           TrangThai = "USED",
+                           MaLP = x.Malp,
+                       };
+
+            DTO_Phong objp1 = new DTO_Phong();
+            foreach (var x in Malp1)
+            {
+                objp1.Sophong = x.SoPhong;
+                objp1.Malp = x.MaLP;
+                objp1.Status = x.TrangThai;
+            }
+            bus_p.Update(objp1);
             MessageBox.Show("Chuyển phòng thành công, từ phòng " + txb_SoPhong.Text + " đến " + dropDown_Phong.selectedValue);
         }
     }
